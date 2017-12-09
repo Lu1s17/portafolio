@@ -25,12 +25,10 @@ export class InformacionService {
   }
 
   private load_about(){
-    this.httpClient.get("https://portafolio-b7c9c.firebaseio.com/equipo.json")
-    .subscribe(
+    this.httpClient.get("https://portafolio-b7c9c.firebaseio.com/team.json").subscribe(
       data =>{
-        console.log(data);
-        this.team = Object.entries(data);
-        console.log(this.team);
+        // console.log(data);
+        this.team = data;
         this.loaded_about = true;
       }
     )
