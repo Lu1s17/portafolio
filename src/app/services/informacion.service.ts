@@ -5,13 +5,33 @@ import { HttpClient } from '@angular/common/http';
 export class InformacionService {
 
   private info:any = {}
-  private cargada:boolean = false;
+  private loaded_info:boolean = false;
+  private loaded_about:boolean = false;
+  private team:any[] = [];
+
   constructor(private httpClient:HttpClient) {
+    this.load_info();
+    this.load_about();
+  }
+
+  private load_info(){
     this.httpClient.get("assets/data/info.page.json").subscribe(
       data =>{
-        console.log(data);
+        // console.log(data);
         this.info = data;
-        this.cargada = true;
+        this.loaded_info = true;
+      }
+    )
+  }
+
+  private load_about(){
+    this.httpClient.get("https://portafolio-b7c9c.firebaseio.com/equipo.json")
+    .subscribe(
+      data =>{
+        console.log(data);
+        this.team = Object.entries(data);
+        console.log(this.team);
+        this.loaded_about = true;
       }
     )
   }
