@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { ItemComponent } from './components/item/item.component';
 //Rutas
 import { APP_ROUTING } from './app.routes';
 import { InformacionService } from './services/informacion.service';
+import { ProductosService } from './services/productos.service';
 
 
 @NgModule({
@@ -26,10 +27,10 @@ import { InformacionService } from './services/informacion.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpModule,
     APP_ROUTING
   ],
-  providers: [InformacionService],
+  providers: [InformacionService, ProductosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

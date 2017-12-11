@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class InformacionService {
@@ -9,26 +9,26 @@ export class InformacionService {
   private loaded_about:boolean = false;
   private team:any[] = [];
 
-  constructor(private httpClient:HttpClient) {
+  constructor(private http:Http) {
     this.load_info();
     this.load_about();
   }
 
   private load_info(){
-    this.httpClient.get("assets/data/info.page.json").subscribe(
+    this.http.get("assets/data/info.page.json").subscribe(
       data =>{
-        // console.log(data);
-        this.info = data;
+        //console.log(data.json());
+        this.info = data.json();;
         this.loaded_info = true;
       }
     )
   }
 
   private load_about(){
-    this.httpClient.get("https://portafolio-b7c9c.firebaseio.com/team.json").subscribe(
+    this.http.get("https://portafolio-b7c9c.firebaseio.com/team.json").subscribe(
       data =>{
-        // console.log(data);
-        this.team = data;
+        //console.log(data.json());
+        this.team = data.json();
         this.loaded_about = true;
       }
     )
