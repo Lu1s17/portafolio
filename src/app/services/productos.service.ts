@@ -17,6 +17,7 @@ export class ProductosService {
                    .subscribe( res => {
                      console.log(res.json());
                      this.loading = false;
+                     this.products = res.json();
                    })
   }
 
