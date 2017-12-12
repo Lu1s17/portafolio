@@ -11,6 +11,10 @@ export class ProductosService {
     this.load_products()
   }
 
+  public load_product(id:string){
+    return this.http.get(`https://portafolio-b7c9c.firebaseio.com/productos/${id}.json`);
+  }
+
   public load_products(){
     this.loading = true;
     this.http.get('https://portafolio-b7c9c.firebaseio.com/productos_idx.json')
