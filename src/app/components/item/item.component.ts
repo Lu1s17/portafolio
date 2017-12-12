@@ -20,7 +20,7 @@ export class ItemComponent {
                     .subscribe(res => {
                       this.item = res.json();
                       this.id = parameters['id'];
-                      console.log(this.item);
+                      //console.log(this.item);
                     })
 
     })
