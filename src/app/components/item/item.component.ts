@@ -9,7 +9,7 @@ import { ProductosService } from '../../services/productos.service';
 })
 export class ItemComponent {
 
-  private item:any = undefined;
+  public item:any = undefined;
   private id:any = undefined;
 
   constructor(private route:ActivatedRoute,

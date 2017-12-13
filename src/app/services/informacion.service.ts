@@ -4,10 +4,10 @@ import { Http } from '@angular/http';
 @Injectable()
 export class InformacionService {
 
-  private info:any = {}
+  public info:any = {}
   private loaded_info:boolean = false;
   private loaded_about:boolean = false;
-  private team:any[] = [];
+  public team:any[] = [];
 
   constructor(private http:Http) {
     this.load_info();

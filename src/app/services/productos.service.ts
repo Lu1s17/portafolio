@@ -4,9 +4,9 @@ import { Http} from '@angular/http';
 @Injectable()
 export class ProductosService {
 
-  products:any[] = [];
-  filtered_products:any[] = [];
-  loading:boolean = true;
+  public products:any[] = [];
+  public filtered_products:any[] = [];
+  public loading:boolean = true;
 
   constructor(private http: Http) {
     this.load_products()

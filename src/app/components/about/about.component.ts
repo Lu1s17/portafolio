@@ -8,5 +8,5 @@ import { InformacionService } from '../../services/informacion.service';
 })
 export class AboutComponent {
 
-  constructor(private informacionService:InformacionService) { }
+  constructor(public informacionService:InformacionService) { }
 }

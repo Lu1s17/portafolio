@@ -12,7 +12,7 @@ export class SearchComponent {
   private term:string = undefined;
 
   constructor(private route:ActivatedRoute,
-              private productosService:ProductosService) {
+              public productosService:ProductosService) {
     route.params.subscribe(parameters => {
       this.term = parameters['term'];
       //console.log(this.term);

@@ -8,8 +8,8 @@ import { InformacionService } from '../../services/informacion.service';
 })
 export class FooterComponent {
 
-  private anio:number = new Date().getFullYear();
+  public anio:number = new Date().getFullYear();
 
-  constructor(private informacionService:InformacionService){}
+  constructor(public informacionService:InformacionService){}
 
 }

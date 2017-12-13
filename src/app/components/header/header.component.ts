@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-  constructor(private informacionService:InformacionService,
+  constructor(public informacionService:InformacionService,
               private router:Router){}
 
   search_product(term:string){

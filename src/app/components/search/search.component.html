@@ -28,7 +28,7 @@
 
   </div>
 
-  <div *ngIf="productosService.filtered_products.length > 0 && !loading"
+  <div *ngIf="productosService.filtered_products.length > 0 && !productosService.loading"
        class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4 animated fadeIn">
     <a *ngFor="let product of productosService.filtered_products"
        [routerLink]="['/item', product.cod]" class="rk-item ae-masonry__item">
